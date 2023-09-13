@@ -2,7 +2,10 @@ const container = document.querySelector('.container')
 const canvasBtn = document.querySelector('.btn')
 
 function addColor (thingy) {
-    thingy.style.backgroundColor = `var(--color-${Math.floor(Math.random() * 5) +1})`
+    const red = Math.floor(Math.random() * 255) 
+    const green = Math.floor(Math.random() * 255)
+    const blue = Math.floor(Math.random() * 255) 
+    thingy.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
 }
 
 function boxMaker (size) {
