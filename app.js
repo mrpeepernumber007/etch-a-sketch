@@ -4,7 +4,7 @@ const canvasBtn = document.querySelector('.btn')
 function boxMaker (size) {
     for (let i = 0; i < (size); i++) {
         let line = document.createElement('div')
-        line.classList.add('.line')
+        // line.style.maxWidth = `calc((1/${size})/960px)`
         container.appendChild(line)
         for (let j = 0; j < size; j++) {
             let box = document.createElement('div')
@@ -24,4 +24,4 @@ canvasBtn.addEventListener('click', () => {
     boxMaker(boxNum)
 })
 
-boxMaker(16)
+boxMaker(20)
