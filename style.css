@@ -1,3 +1,11 @@
+:root {
+    --color-1: hsl(290, 50%, 50%);
+    --color-2: hsl(180, 50%, 50%);
+    --color-3: hsl(230, 70%, 50%);
+    --color-4: hsl(270, 70%, 50%);
+    --color-5: hsl(200, 70%, 50%);
+}
+
 body {
     background-color: black;
     display: flex;
@@ -12,13 +20,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid 3px white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px white;
+    overflow: hidden;
 }
 
 .line{opacity: 100%;}
 
 .box {
-    background-color: blue;
     flex-shrink: 1;
 }
 

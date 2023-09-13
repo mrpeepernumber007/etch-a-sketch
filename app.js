@@ -1,6 +1,10 @@
 const container = document.querySelector('.container')
 const canvasBtn = document.querySelector('.btn')
 
+function addColor (thingy) {
+    thingy.style.backgroundColor = `var(--color-${Math.floor(Math.random() * 5) +1})`
+}
+
 function boxMaker (size) {
     for (let i = 0; i < (size); i++) {
         let line = document.createElement('div')
@@ -12,18 +16,24 @@ function boxMaker (size) {
             box.style.width = `calc(960px * (1/${size}))`
             box.style.height = `calc(960px * (1/${size}))`
             line.appendChild(box)
-            box.addEventListener('mouseover', () => box.classList.add('hovered-box'))
+            box.addEventListener('mouseover', () => addColor(box))
         }
     }
 }
 
-canvasBtn.addEventListener('click', () => {
+function sizePrompt () {
     let boxNum = prompt('How many boxes?', 16)
-    let lines = document.querySelectorAll('.line')
-    let boxes = document.querySelectorAll('.box')
-    boxes.forEach(box => box.remove())
-    lines.forEach(line => line.remove())
-    boxMaker(boxNum)
-})
+    if (boxNum > 100) {sizePrompt()}
+    else {
+        let lines = document.querySelectorAll('.line')
+        let boxes = document.querySelectorAll('.box')
+        boxes.forEach(box => box.remove())
+        lines.forEach(line => line.remove())
+        boxMaker(boxNum)
+    }
+}
 
-boxMaker(5)
+canvasBtn.addEventListener('click', sizePrompt)
+
+
+boxMaker(16)
